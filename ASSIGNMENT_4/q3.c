@@ -12,10 +12,21 @@ int main() {
     printf("Enter the number of rows: ");
     scanf("%d", &n);
 
-    for (i = 1; i <= n; i++) {
-        for (j = 1; j <= i; j++) {
-            printf("%d ", i + j - 1);
+    for (int i = 1; i <= n; i++) {
+        
+        // 1. Loop for spaces: prints spaces to right-align the numbers
+        for (int space = 1; space <= n - i; space++) {
+            printf("  "); // Two spaces to align with the numbers
         }
+        
+        // 2. Loop for numbers: starts at 'i' and prints 'i' numbers total
+        int num = i;
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", num);
+            num++;
+        }
+        
+        // Move to the next line after completing the row
         printf("\n");
     }
     return 0;
